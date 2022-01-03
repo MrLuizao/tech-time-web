@@ -1,0 +1,16 @@
+<section class="job-list-section section-gap grey-bg">
+    <div class="container">
+        <div class="job-lists">
+            <div class="single-job" *ngFor="let item of jobs">
+                <h4 class="title">{{item.title}} <span class="job-time" *ngIf="item.period">({{item.period}})</span></h4>
+                <p>
+                    {{item.shortdesc}}
+                </p>
+                <a routerLink="/contact" class="apply-btn">apply now <i class="far fa-long-arrow-right"></i></a>
+            </div>
+        </div>
+        <div class="view-btn text-center mt-60">
+            <a routerLink="/" class="main-btn">View All Jobs</a>
+        </div>
+    </div>
+</section>

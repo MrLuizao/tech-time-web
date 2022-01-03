@@ -1,0 +1,36 @@
+<section class="project-details section-gap" *ngFor="let item of portfoliodetails">
+    <div class="container">
+        <div class="project-thumb">
+            <img [src]="item.gridimg" class="w-100" [alt]="item.title">
+        </div>
+        <div class="project-content mt-60">
+            <div class="row">
+                <div class="col-lg-8 order-2 order-lg-2">
+                    <div class="content">
+                        <h2>{{item.title}}</h2>
+                        <div [innerHtml]="item.description"></div>
+                    </div>
+                </div>
+                <div class="col-lg-4 order-1 order-lg-2">
+                    <div class="details">
+                        <ul>
+                            <li>
+                                <h3>Project Name</h3>
+                                <p>{{item.title}}</p>
+                            </li>
+                            <li *ngFor="let client of getClient(item.client)">
+                                <h3>Clients Name</h3>
+                                <p>{{client.name}}</p>
+                            </li>
+                            <li>
+                                <h3>Project Date</h3>
+                                <p>{{item.projectdate}}</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div [innerHtml]="item.htmldesc" class="col-12 order-3 row"></div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,24 @@
+<section class="banner-section banner-section-two">
+    <ngx-slick-carousel #slickModal="slick-carousel" [config]="settings" class="banner-slider" id="bannerSlider">
+        <div ngxSlickItem class="single-banner" [style.background-image]="'url('+item.img+')'" *ngFor="let item of banner">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="banner-content text-center">
+                            <h1 data-animation="fadeInDown" data-delay="0.8s" [innerHtml]="item.title"></h1>
+                            <p data-animation="fadeInUp" data-delay="1s" [innerHtml]="item.text"></p>
+                            <ul class="btn-wrap">
+                                <li data-animation="fadeInLeft" data-delay="1.2s">
+                                    <a routerLink="/contact" class="main-btn main-btn-4">Get Started Now</a>
+                                </li>
+                                <li data-animation="fadeInRight" data-delay="1.4s">
+                                    <a routerLink="/services" class="main-btn main-btn-2">Our Services</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ngx-slick-carousel>
+</section>

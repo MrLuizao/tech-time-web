@@ -1,0 +1,36 @@
+<section class="banner-section">
+    <ngx-slick-carousel #slickModal="slick-carousel" [config]="settings" class="banner-slider" id="bannerSlider">
+        <div ngxSlickItem class="single-banner" [style.background-image]="'url('+item.img+')'"
+            *ngFor="let item of banner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10">
+                        <div class="banner-content">
+                            <span class="promo-text" data-animation="fadeInDown" data-delay="0.8s">
+                                {{item.subtitle}}
+                            </span>
+                            <h1 data-animation="fadeInUp" data-delay="1s" [innerHtml]="item.title"></h1>
+                            <ul class="btn-wrap">
+                                <li data-animation="fadeInLeft" data-delay="1.2s">
+                                    <a routerLink="/contact" class="main-btn main-btn-4">Get Started Now</a>
+                                </li>
+                                <li data-animation="fadeInRight" data-delay="1.4s">
+                                    <a routerLink="/services" class="main-btn main-btn-2">Our Services</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="banner-shapes">
+                <div class="one"></div>
+                <div class="two"></div>
+                <div class="three"></div>
+                <div class="four"></div>
+            </div>
+        </div>
+    </ngx-slick-carousel>
+    <div class="search-wrap">
+        <a href="#" class="search-icon"><i class="far fa-search"></i></a>
+    </div>
+</section>

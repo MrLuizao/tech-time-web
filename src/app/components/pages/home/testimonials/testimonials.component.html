@@ -1,0 +1,44 @@
+<section class="testimonial-section grey-bg">
+    <div class="container">
+        <div class="row justify-content-center justify-content-lg-start">
+            <div class="col-lg-6 col-md-10 offset-lg-5">
+                <div class="section-title left-border">
+                    <span class="title-tag">Meet Our Advisors</span>
+                    <h2 class="title">We Have An Exclusive <br> Team Member</h2>
+                </div>
+                <ngx-slick-carousel #slickModal="slick-carousel" [config]="settings" class="testimonial-items" id="testimonialSliderOne">
+                    <div ngxSlickItem class="testimonial-item" *ngFor="let item of testimonial">
+                        <div class="content">
+                            <p>
+                                <span class="quote-top">
+                                    <i class="fas fa-quote-left"></i>
+                                </span>
+                                <span [innerHtml]="item.comment" class="d-contents"></span>
+                                <span class="quote-bottom"> 
+                                    <i class="fas fa-quote-right"></i>
+                                </span>
+                            </p>
+                        </div>
+                        <div class="author" *ngFor="let author of getAuthor(item.author)">
+                            <div class="thumb">
+                                <img [src]="author.img" [alt]="author.name">
+                            </div>
+                            <div class="desc">
+                                <h4>{{author.name}}</h4>
+                                <span>{{author.post}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </ngx-slick-carousel>
+                <div class="testimonial-arrows row">
+                    <div class="col-12 order-1"><button class="slick-arrow next-arrow"><i class="fal fa-long-arrow-right"></i></button></div>
+                    <div class="col-12 order-2"><button class="slick-arrow prev-arrow"><i class="fal fa-long-arrow-left"></i></button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonials img -->
+    <div class="testimonial-img">
+        <img src="assets/img/testimonial/testimonial.png" alt="testimonial">
+    </div>
+</section>

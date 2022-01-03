@@ -1,0 +1,64 @@
+<section class="shop-page-wrap section-gap">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 order-1">
+                <div class="row shop-top-bar justify-content-between">
+                    <div class="col-lg-3 col-6 col-tiny-12">
+                        <div class="product-search">
+                            <form>
+                                <input type="search" placeholder="Search Keywords">
+                                <button type="submit"><i class="far fa-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-6 col-tiny-12">
+                        <div class="product-shorting">
+                            <select>
+                                <option value="0" selected>Sort by</option>
+                                <option value="1">Deafult</option>
+                                <option value="2">By Name</option>
+                                <option value="3">By Price</option>
+                            </select>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-10 order-3 order-lg-2">
+                <app-shopsidebar></app-shopsidebar>
+            </div>
+            <div class="col-lg-9 order-2 order-lg-2">
+                <div class="product-loop row">
+                    <div class="col-lg-4 col-sm-6" *ngFor="let item of shopblock | paginate: { itemsPerPage: 6, currentPage: page }">
+                        <div class="single-product">
+                            <div class="product-img">
+                                <img [src]="item.image[0]" [alt]="item.title">
+                                <div class="product-action">
+                                    <a href="#"><i class="far fa-shopping-cart"></i></a>
+                                    <a href="#"><i class="far fa-heart"></i></a>
+                                </div>
+                            </div>
+                            <div class="product-desc">
+                                <ul class="rating">
+                                    <ngb-rating [max]="5" [(rate)]="item.rating" [readonly]="true">
+                                        <ng-template let-fill="fill" let-index="index">
+                                            <li>
+                                                <i class="fas fa-star" [class.active]="fill === 100"></i>
+                                            </li>
+                                        </ng-template>
+                                    </ngb-rating>
+                                </ul>
+                                <h5 class="title"><a routerLink="/product-details/{{item.id}}">{{item.title}}</a></h5>
+                                <span class="price">${{item.price | number:'1.2-2'}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pagination justify-content-center">
+                    <pagination-controls (pageChange)="page = $event" responsive="true"
+                    previousLabel="<"
+                    nextLabel=">"></pagination-controls>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,44 @@
+<section class="blog-section section-gap-top">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <!-- Blog loop(Standard) -->
+                <div class="blog-loop standard-blog row">
+                    <!-- Single Post -->
+                    <div class="col-12" *ngFor="let item of blogpost | paginate: { itemsPerPage: 2, currentPage: page }">
+                        <div class="single-post-box">
+                            <div class="post-thumb">
+                                <img [src]="item.image" class="w-100" [alt]="item.title">
+                            </div>
+                            <div class="post-meta">
+                                <ul>
+                                    <li><i class="far fa-user"></i>
+                                        <a routerLink="/blog/author/{{author.id}}" *ngFor="let author of getAuthor(item.author)">{{author.name}}</a>
+                                    </li>
+                                    <li><i class="far fa-calendar-alt"></i><a href="#">{{item.postdate}}</a></li>
+                                    <li><i class="far fa-comments"></i><a href="#">Comments ({{item.reviews.length}})</a></li>
+                                </ul>
+                            </div>
+                            <div class="post-content">
+                                <h3 class="title">
+                                    <a routerLink="/blog-details/{{item.id}}"> {{item.title}} </a>
+                                </h3>
+                                <p>{{item.shortdesc}}...</p>
+                                <a routerLink="/blog-details/{{item.id}}" class="main-btn">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pagination -->
+                <div class="pagination">
+                    <pagination-controls (pageChange)="page = $event" responsive="true"
+                    previousLabel="<"
+                    nextLabel=">"></pagination-controls>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-8">
+                <app-blogsidebar></app-blogsidebar>
+            </div>
+        </div>
+    </div>
+</section>

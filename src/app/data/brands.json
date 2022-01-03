@@ -1,0 +1,27 @@
+[
+    {
+        "id":1,
+        "img":"assets/img/clients/01.png",
+        "title":"company name"
+    },
+    {
+        "id":2,
+        "img":"assets/img/clients/02.png",
+        "title":"company name"
+    },
+    {
+        "id":3,
+        "img":"assets/img/clients/03.png",
+        "title":"company name"
+    },
+    {
+        "id":4,
+        "img":"assets/img/clients/04.png",
+        "title":"company name"
+    },
+    {
+        "id":5,
+        "img":"assets/img/clients/05.png",
+        "title":"company name"
+    }
+]

@@ -1,0 +1,33 @@
+<section class="skill-section skill-section-two">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-6 col-md-10">
+                <!-- Skill Text Block -->
+                <div class="skill-text">
+                    <div class="section-title mb-40 left-border">
+                        <span class="title-tag">Company Skills</span>
+                        <h2 class="title">We Have Experience <br> For Business Planning</h2>
+                    </div>
+                    <p>
+                        Sedut perspiciatis unde omnis iste natus error sit voluptat em accusantium doloremque
+                        laudantium, totam raperiaeaque ipsa quae ab illo inventore veritatis et quasi
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-10">
+                <div class="skill-progress-bars">
+                    <div class="skill-progress" *ngFor="let item of skills">
+                        <div class="title d-flex justify-content-between">
+                            <span>{{item.title}}</span>
+                            <span>{{item.value}}%</span>
+                        </div>
+                        <div class="progressbar-wrap">
+                            <div class="progressbar" [style.width.%]="item.value">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

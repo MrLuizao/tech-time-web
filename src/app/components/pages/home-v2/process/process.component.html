@@ -1,0 +1,43 @@
+<section class="working-process-section grey-bg">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-6 col-md-10 order-lg-1 order-2">
+                <div class="process-text">
+                    <!-- Section Title -->
+                    <div class="section-title left-border mb-30">
+                        <span class="title-tag">Working Process</span>
+                        <h2 class="title">How Dose We Works</h2>
+                    </div>
+                    <p>
+                        Sedut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                        laudantium
+                    </p>
+                    <!-- process-loop -->
+                    <div class="process-loop">
+                        <div class="single-process" *ngFor="let item of list;let i = index">
+                            <div class="icon">
+                                <i [class]="item.icon"></i>
+                                <span>0{{1+i}}</span>
+                            </div>
+                            <div class="content">
+                                <h4>{{item.title}}</h4>
+                                <p>{{item.text}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-10 order-lg-2 order-1">
+                <div class="process-video bg-img-c" style="background-image: url(assets/img/video-bg/01.jpg);">
+                    <div class="video bg-img-c wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="400ms"
+                        style="background-image: url(assets/img/video-bg/02.jpg);">
+                        <a class="paly-icon popup-video" href="#">
+                            <i class="fas fa-play"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="working-circle"></div>
+</section>

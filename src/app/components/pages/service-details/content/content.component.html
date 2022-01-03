@@ -1,0 +1,44 @@
+<section class="service-details section-gap">
+    <div class="container">
+        <div class="row">
+            <!-- Dettails Content -->
+            <div class="col-lg-8" *ngFor="let item of servicedetails">
+                <div class="service-details-content">
+                    <div class="main-thumb mb-40">
+                        <img [src]="item.img" class="w-100" [alt]="item.title">
+                    </div>
+                    <h2 class="title">{{item.title}}</h2>
+                    <p>{{item.description}}</p>
+                    <ul class="circle-check-list mt-50 mb-50" *ngIf="item.notes">
+                        <li *ngFor="let note of item.notes">
+                            <i class="fas fa-check"></i>
+                            {{note}}
+                        </li>
+                    </ul>
+                    <div [innerHtml]="item.htmldata"></div>
+                </div>
+                <div class="faq-section mt-40">
+                    <!-- FAQ LOOP -->
+                    <ngb-accordion [closeOthers]="true" activeIds="static-1" class="accordion faq-loop border-style" id="faqAccordion">
+                        <ngb-panel id="static-{{1+i}}" *ngFor="let box of item.features;let i = index">
+                            <ng-template ngbPanelTitle>
+                                {{box.title}}
+                                <span class="icons">
+                                    <i class="far fa-plus"></i>
+                                </span>
+                            </ng-template>
+                            <ng-template ngbPanelContent>
+                                {{box.text}}
+                            </ng-template>
+                        </ngb-panel>
+                    </ngb-accordion>
+                    <!-- End Faq LOOP -->
+                </div>
+            </div>
+            <!-- Sidebar -->
+            <div class="col-lg-4 col-md-8">
+                <app-servicesidebar></app-servicesidebar>
+            </div>
+        </div>
+    </div>
+</section>

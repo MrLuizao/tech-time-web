@@ -1,0 +1,163 @@
+ <section class="blog-section section-gap-top" *ngFor="let item of blogdetails">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <!-- Blog Details -->
+                <div class="post-details-wrap">
+                    <div class="post-thumb">
+                        <img [src]="item.image" class="w-100" [alt]="item.title">
+                    </div>
+                    <div class="post-meta">
+                        <ul>
+                            <li><i class="far fa-user"></i>
+                                <a routerLink="/blog/author/{{author.id}}" *ngFor="let author of getAuthor(item.author)">{{author.name}}</a>
+                            </li>
+                            <li><i class="far fa-calendar-alt"></i><a href="#">{{item.postdate}}</a></li>
+                            <li><i class="far fa-comments"></i><a href="#">Comments ({{item.reviews.length}})</a></li>
+                        </ul>
+                    </div>
+                    <div class="post-content">
+                        <h3 class="title">{{item.title}}</h3>
+                        <div [innerHtml]="item.htmldesc"></div>
+                    </div>
+                    <div class="post-footer d-md-flex align-items-md-center justify-content-md-between">
+                        <div class="post-tag">
+                            <ul>
+                                <li class="title">Popular Tags :</li>
+                                <li *ngFor="let tag of getBlogTags(item.tags)">
+                                    <a routerLink="/blog/tag/{{tag.id}}">{{tag.title}}, </a> 
+                                </li> 
+                            </ul>
+                        </div>
+                        <div class="post-share">
+                            <ul>
+                                <li class="title">Share :</li>
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fab fa-behance"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Post Author -->
+                <div class="post-author-info" *ngFor="let author of getAuthor(item.author)">
+                    <div class="author-img">
+                        <img [src]="author.img" [alt]="author.name">
+                    </div>
+                    <div class="author-desc">
+                        <h4>{{author.name}}</h4>
+                        <p>{{author.desc | slice:0:230}}</p>
+                        <ul class="social-links">
+                            <li *ngFor="let item of author.social">
+                                <a routerLink="{{item.url}}">
+                                    <i [class]="item.icon"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Post Nav -->
+                <div class="post-nav row">
+                    <div class="prev-post col-md-6">
+                        <div class="img">
+                            <img src="assets/img/sidebar/recent-01.jpg" alt="img">
+                        </div>
+                        <div class="content">
+                            <span class="date"><i class="far fa-calendar-alt"></i> 25 Jan 2021</span>
+                            <h5><a href="#">Smashing Podcast Epis <br> With Rach Andrewe</a></h5>
+                        </div>
+                    </div>
+                    <div class="next-post col-md-6">
+                        <div class="content">
+                            <span class="date">25 Jan 2021 <i class="far fa-calendar-alt"></i></span>
+                            <h5><a href="#">Implementing Infinite <br> Loading In React</a></h5>
+                        </div>
+                        <div class="img">
+                            <img src="assets/img/sidebar/recent-03.jpg" alt="img">
+                        </div>
+                    </div>
+                </div>
+                <!-- Related Post -->
+                <app-relatedpost></app-relatedpost>
+                <!-- Comments Template -->
+                <div class="comment-template">
+                    <h3 class="title">Comments</h3>
+                    <!-- Comments List -->
+                    <ul class="comment-list">
+                        <li *ngFor="let review of item.reviews">
+                            <div class="author-img" *ngFor="let user of getAuthor(review.user)">
+                                <img [src]="user.img" [alt]="user.name">
+                            </div>
+                            <div class="comment-content" *ngFor="let user of getAuthor(review.user)">
+                                <h5 class="author-name">{{user.name}}<span class="date">{{review.commentdate}}</span></h5>
+                                <p>{{review.comment}}</p>
+                                <a href="#" class="reply-btn">Reply <i class="far fa-long-arrow-alt-right"></i></a>
+                            </div>
+                            <ul class="children">
+                                <li *ngFor="let reply of review.replies">
+                                    <div class="author-img" *ngFor="let user of getAuthor(reply.user)">
+                                        <img [src]="user.img" [alt]="user.name">
+                                    </div>
+                                    <div class="comment-content" *ngFor="let user of getAuthor(reply.user)">
+                                        <h5 class="author-name">{{user.name}}<span class="date">{{reply.commentdate}}</span>
+                                        </h5>
+                                        <p>{{reply.comment}}</p>
+                                        <a href="#" class="reply-btn">Reply <i class="far fa-long-arrow-alt-right"></i></a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- Comments form -->
+                    <div class="comment-form">
+                        <h3 class="title">Leave A Reply</h3>
+                        <form>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="input-group mb-30">
+                                        <input type="text" placeholder="Your Full Name">
+                                        <span class="icon"><i class="far fa-user"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="input-group mb-30">
+                                        <input type="email" placeholder="Your Email ">
+                                        <span class="icon"><i class="far fa-envelope"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="input-group textarea mb-30">
+                                        <textarea placeholder="Write Message"></textarea>
+                                        <span class="icon"><i class="far fa-pencil"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="main-btn">Send Reply</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-8">
+                <div class="sidebar">
+                    <div class="widget author-widget" *ngFor="let author of getAuthor(item.author)">
+                        <img [src]="author.img" [alt]="author.name" class="author-img">
+                        <h4 class="name">{{author.name}}</h4>
+                        <span class="role">{{author.post}}</span>
+                        <p>{{author.desc | slice:0:90}}</p>
+                        <ul class="social-icons">
+                            <li *ngFor="let item of author.social">
+                                <a routerLink="{{item.url}}">
+                                    <i [class]="item.icon"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <app-blogsidebar></app-blogsidebar>
+            </div>
+        </div>
+    </div>
+</section>

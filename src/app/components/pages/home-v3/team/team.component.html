@@ -1,0 +1,30 @@
+<section class="team-section">
+    <div class="container-fluid p-70">
+        <div class="section-title text-center both-border mb-80">
+            <span class="title-tag"> Team Member </span>
+            <h2 class="title">Meet Our Professional <br> Expertise</h2>
+        </div>
+        <!-- Team Slider -->
+        <ngx-slick-carousel #slickModal="slick-carousel" [config]="settings" class="team-members-two row"
+            id="teamSliderTwo">
+            <div ngxSlickItem class="col" *ngFor="let item of teamblock">
+                <div class="team-member">
+                    <div class="member-picture">
+                        <img [src]="item.img" [alt]="item.name">
+                    </div>
+                    <div class="member-desc">
+                        <h3 class="name">{{item.name}}</h3>
+                        <span class="pro">{{item.post}}</span>
+                        <ul class="social-icons">
+                            <li *ngFor="let item of item.social">
+                                <a routerLink="{{item.url}}">
+                                    <i [class]="item.icon"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </ngx-slick-carousel>
+    </div>
+</section>

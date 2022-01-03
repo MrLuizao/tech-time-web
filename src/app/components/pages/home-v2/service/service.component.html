@@ -1,0 +1,29 @@
+<section class="service-section shape-style-two service-line-shape section-gap grey-bg">
+    <div class="container">
+        <!-- Section Title -->
+        <div class="section-title text-center both-border mb-50">
+            <span class="title-tag">Comany Services</span>
+            <h2 class="title">We Provide Most Exclusive <br> Service For Business</h2>
+        </div>
+        <!-- Services Boxes -->
+        <div class="row service-boxes justify-content-center">
+            <div class="col-lg-3 col-sm-6 col-10" *ngFor="let item of service">
+                <div class="service-box-two text-center">
+                    <div class="icon">
+                        <i [class]="item.icon"></i>
+                    </div>
+                    <h3><a routerLink="/service-details/{{item.id}}">{{item.title}}</a></h3>
+                    <a routerLink="/service-details/{{item.id}}" class="service-link">
+                        <i class="fal fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="line-one">
+        <img src="assets/img/lines/12.png" alt="line-shape">
+    </div>
+    <div class="line-two">
+        <img src="assets/img/lines/11.png" alt="line-shape">
+    </div>
+</section>

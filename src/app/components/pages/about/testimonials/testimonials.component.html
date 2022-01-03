@@ -1,0 +1,31 @@
+<section class="testimonial-section-three no-bg">
+    <div class="container">
+        <div class="row justify-content-center no-gutters">
+            <div class="col-lg-10">
+                <ngx-slick-carousel #slickModal="slick-carousel" [config]="settings" class="testimonial-items"
+                    id="testimonialSliderThree">
+                    <div ngxSlickItem class="testimonial-item text-center" *ngFor="let item of testimonial">
+                        <div class="author-thumb" *ngFor="let author of getAuthor(item.author)">
+                            <img [src]="author.img" [alt]="author.name">
+                        </div>
+                        <div class="content">
+                            <p> 
+                                <span class="quote-top">
+                                    <i class="fal fa-quote-left"></i>
+                                </span>
+                                <span class="d-contents" [innerHtml]="item.comment"></span>
+                                <span class="quote-bottom">
+                                    <i class="fal fa-quote-right"></i>
+                                </span>
+                            </p>
+                        </div>
+                        <div class="author" *ngFor="let author of getAuthor(item.author)">
+                            <h4>{{author.name}}</h4>
+                            <span>{{author.post}}</span>
+                        </div>
+                    </div>
+                </ngx-slick-carousel>
+            </div>
+        </div>
+    </div>
+</section>

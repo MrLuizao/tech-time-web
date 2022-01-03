@@ -1,0 +1,32 @@
+<section class="fact-section-three section-gap">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-6 col-md-10 order-2 order-lg-1">
+                <div class="fact-text">
+                    <div class="section-title left-border mb-40">
+                        <span class="title-tag">Company Statistics</span>
+                        <h2 class="title">We Are Established For Business & Consulting Since 25 Years</h2>
+                    </div>
+                    <ul class="fact-list">
+                        <li *ngFor="let item of list"> <i class="fas fa-check"></i> {{item.text}}</li>
+                    </ul>
+                    <a routerLink="/about" class="main-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-10 order-1 order-lg-2">
+                <ng-masonry-grid [masonryOptions]="{ transitionDuration: '0.8s', percentPosition: true }"
+                [useAnimation]="true" [useImagesLoaded]="true" class="fact-boxes row" id="factIsotpe">
+                    <ng-masonry-grid-item class="col-6 col-tiny-12" *ngFor="let item of counter">
+                        <div class="fact-box fact-box-three text-center {{item.masonry}}">
+                            <div class="icon">
+                                <i [class]="item.icon"></i>
+                            </div>
+                            <h2 class="counter">{{item.value | number:'1.0-0'}}</h2>
+                            <p class="title">{{item.title}}</p>
+                        </div>
+                    </ng-masonry-grid-item>
+                </ng-masonry-grid>
+            </div>
+        </div>
+    </div>
+</section>

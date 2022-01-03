@@ -1,0 +1,27 @@
+<section class="service-section shape-style-one section-gap grey-bg">
+    <div class="container">
+        <!-- Section Title -->
+        <div class="section-title text-center both-border mb-30">
+            <span class="title-tag">Comany Services</span>
+            <h2 class="title">We Provide Most Exclusive <br> Service For Business</h2>
+        </div>
+        <!-- Services Boxes -->
+        <div class="row service-boxes justify-content-center">
+            <div class="col-lg-4 col-md-6 col-sm-8 col-10 col-tiny-12" *ngFor="let item of service | slice:0:3">
+                <div class="service-box text-center">
+                    <div class="icon">
+                        <img [src]="item.shadowicon" [alt]="item.title">
+                    </div>
+                    <h3><a routerLink="/service-details/{{item.id}}">{{item.title}}</a></h3>
+                    <p>{{item.shortdesc}}</p>
+                    <a routerLink="/service-details/{{item.id}}" class="service-link">
+                        <i class="fal fa-long-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dots-line">
+        <img src="assets/img/lines/07.png" alt="img">
+    </div>
+</section>

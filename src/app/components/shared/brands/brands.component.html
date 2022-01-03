@@ -1,0 +1,8 @@
+<ngx-slick-carousel #slickModal="slick-carousel" [config]="settings"
+    class="row align-items-center justify-content-between" id="clientSlider">
+    <div ngxSlickItem class="col" *ngFor="let item of brands">
+        <a href="#" class="client-img d-block text-center">
+            <img [src]="item.img" [alt]="item.title">
+        </a>
+    </div>
+</ngx-slick-carousel>

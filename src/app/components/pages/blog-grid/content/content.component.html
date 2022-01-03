@@ -1,0 +1,38 @@
+<section class="blog-section section-gap-top">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <!-- Blog loop(Grid) -->
+                <div class="blog-loop grid-blog row justify-content-center">
+                    <!-- Single Post -->
+                    <div class="col-lg-6 col-md-6 col-10 col-tiny-12" *ngFor="let item of blogpost | paginate: { itemsPerPage: 6, currentPage: page }">
+                        <div class="single-post-box">
+                            <div class="post-thumb">
+                                <img [src]="item.image" [alt]="item.title">
+                            </div>
+                            <div class="post-content">
+                                <span class="post-date"><i class="far fa-calendar-alt"></i>{{item.postdate}}</span>
+                                <h3 class="title">
+                                    <a routerLink="/blog-details/{{item.id}}"> {{item.title}} </a>
+                                </h3>
+                                <p>{{item.shortdesc | slice:0:90}}...</p>
+                                <a routerLink="/blog-details/{{item.id}}" class="post-link">
+                                    Learn More <i class="far fa-long-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pagination -->
+                <div class="pagination">
+                    <pagination-controls (pageChange)="page = $event" responsive="true"
+                    previousLabel="<"
+                    nextLabel=">"></pagination-controls>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-8">
+                <app-blogsidebar></app-blogsidebar>
+            </div>
+        </div>
+    </div>
+</section>

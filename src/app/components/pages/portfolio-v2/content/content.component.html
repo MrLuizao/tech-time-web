@@ -1,0 +1,31 @@
+<section class="project-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12 col-md-12">
+                <ul class="project-nav project-isotope-filter">
+                    <li class="active" (click)="reset()"> All Project </li>
+                    <li (click)="filterItemsByCategory(category)" *ngFor="let category of categories"> {{category.title}} </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Project Boxes -->
+        <ng-masonry-grid [masonryOptions]="{ transitionDuration: '0.8s', percentPosition: true }"
+        [useAnimation]="true" [useImagesLoaded]="true" class="row project-boxes project-isotope mt-60 justify-content-center">
+            <ng-masonry-grid-item [class]="item.masonryclass" *ngFor="let item of filteredItems">
+                <div class="project-box hover-style">
+                    <div class="project-thumb">
+                        <div class="thumb bg-img-c" [style.background-image]="'url('+item.masonryimg+')'">
+                        </div>
+                    </div>
+                    <div class="project-desc text-center">
+                        <h4><a routerLink="/portfolio-details/{{item.id}}">{{item.title}}</a></h4>
+                        <p>{{item.shortdesc}}</p>
+                        <a routerLink="/portfolio-details/{{item.id}}" class="project-link">
+                            <i class="fal fa-long-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </ng-masonry-grid-item>
+        </ng-masonry-grid>
+    </div>
+</section>

@@ -1,0 +1,37 @@
+<section class="testimonial-section-two section-gap">
+    <div class="container">
+        <div class="row justify-content-center no-gutters">
+            <div class="col-lg-9">
+                <div class="section-title both-border text-center mb-80">
+                    <span class="title-tag">Meet Our Advisors</span>
+                    <h2 class="title">We Have An Exclusive<br>Team Member</h2>
+                </div>
+                <ngx-slick-carousel #slickModal="slick-carousel" [config]="settings" class="testimonial-items" id="testimonialSliderTwo">
+                    <div ngxSlickItem class="testimonial-item" *ngFor="let item of testimonial">
+                        <div class="author-img" *ngFor="let author of getAuthor(item.author)">
+                            <img [src]="author.img" [alt]="author.name">
+                        </div>
+                        <div class="content">
+                            <p>
+                                <span class="quote-top">
+                                    <i class="fas fa-quote-left"></i>
+                                </span>
+                                <span class="d-contents" [innerHtml]="item.comment"></span>
+                                <span class="quote-bottom">
+                                    <i class="fas fa-quote-right"></i>
+                                </span>
+                            </p>
+                        </div>
+                        <div class="author-name" *ngFor="let author of getAuthor(item.author)">
+                            <h4>{{author.name}}</h4>
+                            <span>{{author.post}}</span>
+                        </div>
+                    </div>
+                </ngx-slick-carousel>
+            </div>
+        </div>
+    </div>
+    <div class="testimonial-quote-icon">
+        <img src="assets/img/icons/quote.png" alt="quote">
+    </div>
+</section>

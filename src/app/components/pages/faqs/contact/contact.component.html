@@ -1,0 +1,56 @@
+<section class="contact-section with-illustration-img grey-bg section-gap">
+    <div class="container">
+        <div class="row no-gutters justify-content-end">
+            <div class="col-lg-8">
+                <div class="contact-form">
+                    <div class="section-title left-border mb-40">
+                        <span class="title-tag">Drop A Message</span>
+                        <h2 class="title">Don’t Hesited To Contact Us</h2>
+                    </div>
+                    <form (submit)="sendEmail($event)">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="input-group mb-30">
+                                    <input type="text" placeholder="Your Full Name" name="from_name" required>
+                                    <span class="icon"><i class="far fa-user-circle"></i></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="input-group mb-30">
+                                    <input type="email" placeholder="Your Email Address" name="to_email" required>
+                                    <span class="icon"><i class="far fa-envelope-open"></i></span>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="input-group select mb-30">
+                                    <select name="to_subject" required>
+                                        <option value="subject" selected>Subject</option>
+                                        <option value="Creative Idea">Creative Idea</option>
+                                        <option value="Relationship">Relationship</option>
+                                        <option value="Business Strategy">Business Strategy</option>
+                                        <option value="Productivity">Productivity</option>
+                                        <option value="It Solutions">It Solutions</option>
+                                        <option value="Product Design">Product Design</option>
+                                    </select>
+                                    <span class="icon"><i class="far fa-angle-down"></i></span>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="input-group textarea mb-30">
+                                    <textarea placeholder="Write Message" name="message_html"></textarea>
+                                    <span class="icon"><i class="far fa-pencil"></i></span>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="main-btn">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="illustration-img">
+        <img src="assets/img/illustration/man-with-earth.png" alt="Image">
+    </div>
+</section>

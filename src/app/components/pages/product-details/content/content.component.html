@@ -1,0 +1,152 @@
+<section class="shop-details-wrap">
+    <div class="container">
+        <div class="product-details section-gap" *ngFor="let item of shopdetails">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="product-gallery clearfix">
+                        <div class="product-gallery-arrow">
+                            <ngx-slick-carousel #slickModal="slick-carousel" [config]="settingsThumb"
+                                class="slick-thumbs">
+                                <li ngxSlickItem *ngFor="let image of item.image">
+                                    <img [src]="image" class="w-100" [alt]="item.title">
+                                </li>
+                            </ngx-slick-carousel>
+                        </div>
+                        <div class="gallery-slider-warp">
+                            <ngx-slick-carousel #slickModal="slick-carousel" [config]="settings"
+                                class="product-gallery-slider">
+                                <div ngxSlickItem class="single-gallery-itam" *ngFor="let image of item.image">
+                                    <img [src]="image" class="w-100" [alt]="item.title">
+                                </div>
+                            </ngx-slick-carousel>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="product-summary">
+                        <h3 class="product-name">{{item.title}}</h3>
+                        <ul class="rating">
+                            <ngb-rating [max]="5" [(rate)]="item.rating" [readonly]="true">
+                                <ng-template let-fill="fill" let-index="index">
+                                    <li>
+                                        <i class="fas fa-star" [class.active]="fill === 100"></i>
+                                    </li>
+                                </ng-template>
+                            </ngb-rating>
+                        </ul>
+                        <span class="price">${{item.price | number:'1.2-2'}}</span>
+                        <div class="short-description" [innerHtml]="item.shortdescription">
+                        </div>
+                        <div class="add-to-cart-form">
+                            <form>
+                                <div class="quantity-input">
+                                    <div class="quantity-down" id="quantityDown" (click)="decrement()">
+                                        <i class="fal fa-minus"></i>
+                                    </div>
+                                    <input id="quantity" disabled type="text" value="{{counter}}" name="quantity">
+                                    <div class="quantity-up" id="quantityUP" (click)="increment()">
+                                        <i class="fal fa-plus"></i>
+                                    </div>
+                                </div>
+                                <div class="add-to-cart-btn">
+                                    <button type="submit">Add To Cart</button>
+                                </div>
+                            </form>
+                        </div>
+                        <ul class="product-share">
+                            <li class="title">Share Now:</li>
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="product-details-tab">
+                        <div class="tab-filter-nav">
+                            <div ngbNav #nav="ngbNav" class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <li [ngbNavItem]="1">
+                                    <a ngbNavLink class="border-0">
+                                        Description
+                                    </a>
+                                    <ng-template ngbNavContent>
+                                        <div class="product-description" [innerHtml]="item.productdescription"></div>
+                                    </ng-template>
+                                </li>
+                                <li [ngbNavItem]="2">
+                                    <a ngbNavLink class="border-0">
+                                        Additional information
+                                    </a>
+                                    <ng-template ngbNavContent>
+                                        <div class="additional-info">
+                                            <table>
+                                                <tbody>
+                                                    <tr *ngFor="let data of item.additional">
+                                                        <th>{{data.title}}</th>
+                                                        <td>{{data.text}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </ng-template>
+                                </li>
+                                <li [ngbNavItem]="3">
+                                    <a ngbNavLink class="border-0">
+                                        Reviews ({{item.reviews.length}})
+                                    </a>
+                                    <ng-template ngbNavContent>
+                                        <div class="product-review">
+                                            <ul class="review-list">
+                                                <li class="single-review" *ngFor="let review of item.reviews">
+                                                    <div class="review-thumb" *ngFor="let user of getAuthor(review.user)">
+                                                        <img [src]="user.img" [alt]="user.name">
+                                                    </div>
+                                                    <div class="review-content">
+                                                        <h5 class="name" *ngFor="let user of getAuthor(review.user)">{{user.name}}</h5>
+                                                        <ul class="review-rating">
+                                                            <ngb-rating [max]="5" [(rate)]="review.rating" [readonly]="true">
+                                                                <ng-template let-fill="fill" let-index="index">
+                                                                    <li>
+                                                                        <i class="fas fa-star" [class.active]="fill === 100"></i>
+                                                                    </li>
+                                                                </ng-template>
+                                                            </ngb-rating>
+                                                        </ul>
+                                                        <p>{{review.comment}}</p>
+                                                    </div>
+                                                    <ul class="children">
+                                                        <li *ngFor="let reply of review.replies">
+                                                            <div class="review-thumb" *ngFor="let user of getAuthor(reply.user)">
+                                                                <img [src]="user.img" [alt]="user.name">
+                                                            </div>
+                                                            <div class="review-content">
+                                                                <h5 class="name" *ngFor="let user of getAuthor(reply.user)">{{user.name}}</h5>
+                                                                <ul class="review-rating">
+                                                                    <ngb-rating [max]="5" [(rate)]="reply.rating" [readonly]="true">
+                                                                        <ng-template let-fill="fill" let-index="index">
+                                                                            <li>
+                                                                                <i class="fas fa-star" [class.active]="fill === 100"></i>
+                                                                            </li>
+                                                                        </ng-template>
+                                                                    </ngb-rating>
+                                                                </ul>
+                                                                <p>{{reply.comment}}</p>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </ng-template>
+                                </li>
+                            </div>
+                        </div>
+                        <div [ngbNavOutlet]="nav"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <app-relatedshop></app-relatedshop>
+    </div>
+</section>
