@@ -923,7 +923,8 @@ header .header-nav .nav-container .menu-items ul li .dd-trigger {
 }
 
 header .header-nav .nav-container .offcanvas-toggler {
-  background-color: #ff4a17;
+  /* background-color: #ff4a17; LVR EDITED*/
+  background-color: #CC0000;
   cursor: pointer;
   border-radius: 5px;
   height: 65px;
