@@ -5,21 +5,12 @@
         "child": true,
         "submenu": [
             {
-                "id": 11,
-                "link": "/",
-                "linkText": "Home v1"
-            },
-            {
                 "id": 12,
-                "link": "/home-v2",
-                "linkText": "Home v2"
-            },
-            {
-                "id": 13,
-                "link": "/home-v3",
-                "linkText": "Home v3"
+                "link": "/home",
+                "linkText": "Home Page"
             }
         ]
+
     },
     {
         "id": 2,
