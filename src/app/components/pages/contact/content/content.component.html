@@ -34,29 +34,33 @@
                     <div class="section-title text-center mb-40">
                         <h2 class="title">Don’t Hesited To Contact Us</h2>
                     </div>
-                    <form (submit)="sendEmail($event)">
+                    <form #form="ngForm" (ngSubmit)="sendContactForm(form)">
                         <div class="row">
                             <div class="col-lg-4">
                                 <div class="input-group mb-30">
-                                    <input type="text" placeholder="Your Full Name" name="from_name" required>
+                                    <input  type="text" name="name" minlength="4" placeholder="Your Full Name"
+                                            [(ngModel)]="contactFormModel.name" required>
                                     <span class="icon"><i class="far fa-user-circle"></i></span>
                                 </div>
                             </div>
                             <div class="col-lg-4">
                                 <div class="input-group mb-30">
-                                    <input type="email" placeholder="Your Email Address" name="to_email" required>
+                                    <input  type="email" name="email" placeholder="Your Email Address"
+                                            [(ngModel)]="contactFormModel.email" required>
                                     <span class="icon"><i class="far fa-envelope-open"></i></span>
                                 </div>
                             </div>
                             <div class="col-lg-4">
                                 <div class="input-group mb-30">
-                                    <input type="text" placeholder="Your Phone" name="to_phone" required>
+                                    <input  type="number" name="phone" minlength="10" placeholder="Your Phone"
+                                            [(ngModel)]="contactFormModel.phone" required>
                                     <span class="icon"><i class="far fa-phone"></i></span>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="input-group textarea mb-30">
-                                    <textarea placeholder="Write Message" name="message_html"></textarea>
+                                    <textarea   type="string" name="message" minlength="10" placeholder="Write Message"
+                                                [(ngModel)]="contactFormModel.message" ></textarea>
                                     <span class="icon"><i class="far fa-pencil"></i></span>
                                 </div>
                             </div>
