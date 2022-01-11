@@ -10,6 +10,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PreloaderComponent } from './preloader/preloader.component';
 
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +27,10 @@ import { PreloaderComponent } from './preloader/preloader.component';
     BrowserAnimationsModule,
     BreadcrumbModule,
     NgbModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent],
