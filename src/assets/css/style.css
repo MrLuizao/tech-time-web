@@ -159,7 +159,8 @@ textarea {
   position: absolute;
   right: 25px;
   font-size: 14px;
-  color: #ff4a17;
+  /* color: #ff4a17; LVR EDITED*/
+  color: #C4151C;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -295,7 +296,7 @@ a, a:hover {
   right: 15px;
   top: 4px;
   bottom: 4px;
-  background-color: #27a9e1;
+  background-color: #00306A;
   -webkit-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
   content: '';
@@ -316,7 +317,7 @@ a, a:hover {
 }
 
 .main-btn.main-btn-2 {
-  background-color: #27a9e1;
+  background-color: #00306A;
   color: #fff;
 }
 
@@ -1120,7 +1121,8 @@ header .header-nav .nav-container.breakpoint-on {
 }
 
 header .header-nav .nav-container.breakpoint-on .nav-menu {
-  background-color: #14212b;
+  /* background-color: #14212b; LVR EDITED*/
+  background: Linear-gradient(43deg, rgba(39,169,225,1) 0%, rgba(0,48,106,1) 100%);
   position: fixed;
   top: 0;
   left: -300px;
@@ -1377,7 +1379,7 @@ header.header-two .header-nav .nav-container .menu-items ul li a, header.header-
 }
 
 header.header-two .header-nav .nav-container .menu-items ul li .submenu li a:hover {
-  background-color: #27A9E1;
+  background-color: #00306A;
 }
 
 header.header-two .header-topbar .contact-info li,
