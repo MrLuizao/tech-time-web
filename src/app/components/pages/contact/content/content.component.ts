@@ -13,6 +13,8 @@ export class ContentComponent implements OnInit {
 
   contactFormModel: ContactFormModel = new ContactFormModel();
 
+  msgAlert: string = '';
+
   constructor(  private fireService: FirestoreService ) { }
   // public sendEmail(e: Event) {
   //   e.preventDefault();
@@ -33,7 +35,7 @@ export class ContentComponent implements OnInit {
   sendContactForm(form: NgForm){
     
     if(form.invalid){ 
-      console.log(this.contactFormModel);
+      this.showAlert('Complete all the fields!');
       return 
     }else{
       this.fireService.createDataContactForm(this.contactFormModel).then( (resp)=>{
@@ -43,14 +45,23 @@ export class ContentComponent implements OnInit {
         this.contactFormModel.phone = null;
         this.contactFormModel.message = '';
 
+        this.showAlert('We got your message!');
+
       }).catch( (error) =>{
         console.error('error:', error);
-        
+        this.showAlert('error');
       });
     }
 
-    console.log(this.contactFormModel);
+  }
 
+  showAlert(msgParam: string) {
+    this.msgAlert = msgParam;
+    let element = document.getElementById("snackbar");
+    element.className = "show";
+    setTimeout( ()=>{
+      element.className = element.className.replace("show", "")
+    }, 3000);
   }
 
 }
