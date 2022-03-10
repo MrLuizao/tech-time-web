@@ -1,135 +1,57 @@
 [
     {
         "id": 1,
-        "linkText": "Home",
-        "child": true,
-        "submenu": [
-            {
-                "id": 12,
-                "link": "/home",
-                "linkText": "Home Page"
-            }
-        ]
+        "linkText": "Inicio",
+        "link": "/home"
+
+
 
     },
     {
         "id": 2,
-        "linkText": "Pages",
+        "linkText": "¿Quiénes Somos?",
         "child": true,
         "submenu": [
             {
                 "id": 21,
                 "link": "/about",
-                "linkText": "About us"
+                "linkText": "Nuestra Marca"
             },
             {
                 "id": 22,
                 "link": "/team",
-                "linkText": "Our Team"
-            },
-            {
-                "id": 23,
-                "link": "/team-details/1",
-                "linkText": "Team Details"
-            },
-            {
-                "id": 24,
-                "link": "/careers",
-                "linkText": "Careers"
-            },
-            {
-                "id": 25,
-                "link": "/faqs",
-                "linkText": "FAQ's"
+                "linkText": "Nuestro Equipo"
             }
         ]
     },
     {
         "id": 3,
-        "linkText": "Services",
+        "linkText": "¿Qué ofrecemos?",
         "child": true,
         "submenu": [
-            {
-                "id": 31,
-                "link": "/services",
-                "linkText": "Services"
-            },
-            {
-                "id": 32,
-                "link": "/services-v2",
-                "linkText": "Services v2"
-            },
             {
                 "id": 33,
                 "link": "/service-details/1",
-                "linkText": "Service Details"
-            }
-        ]
-    },
-    {
-        "id": 4,
-        "linkText": "Blog",
-        "child": true,
-        "submenu": [
-            {
-                "id": 41,
-                "link": "/blog-grid",
-                "linkText": "Blog Grid"
-            },
-            {
-                "id": 42,
-                "link": "/blog-standard",
-                "linkText": "Blog Standard"
-            },
-            {
-                "id": 43,
-                "link": "/blog-details/1",
-                "linkText": "Blog Details"
+                "linkText": "Nuestros Servicios"
             }
         ]
     },
     {
         "id": 5,
-        "linkText": "Portfolio",
+        "linkText": "Experiencia",
         "child": true,
         "submenu": [
-            {
-                "id": 51,
-                "link": "/portfolio",
-                "linkText": "Portfolio"
-            },
             {
                 "id": 52,
                 "link": "/portfolio-v2",
-                "linkText": "Portfolio v2"
-            },
-            {
-                "id": 53,
-                "link": "/portfolio-details/1",
-                "linkText": "Portfolio Details"
+                "linkText": "Nuestros proyectos"
             }
         ]
     },
-    {
-        "id": 6,
-        "linkText": "Shop",
-        "child": true,
-        "submenu": [
-            {
-                "id": 61,
-                "link": "/shop",
-                "linkText": "Shop"
-            },
-            {
-                "id": 62,
-                "link": "/product-details/1",
-                "linkText": "Product Details"
-            }
-        ]
-    },
+
     {
         "id": 7,
         "link": "/contact",
-        "linkText": "Contact"
+        "linkText": "Contacto"
     }
 ]
