@@ -8,15 +8,15 @@ const routes: Routes = [
   { path: '', loadChildren: () => import('./components/pages/home-v2/home-v2.module').then(m => m.HomeV2Module), data: { breadcrumb: 'Homepage' } },
   { path: 'home', loadChildren: () => import('./components/pages/home-v2/home-v2.module').then(m => m.HomeV2Module), data: { breadcrumb: 'Homepage' } },
   // Pages
-  { path: 'about', loadChildren: () => import('./components/pages/about/about.module').then(m => m.AboutModule), data: { breadcrumb: 'About Us' } },
-  { path: 'team', loadChildren: () => import('./components/pages/team/team.module').then(m => m.TeamModule), data: { breadcrumb: 'Team' } },
+  { path: 'about', loadChildren: () => import('./components/pages/about/about.module').then(m => m.AboutModule), data: { breadcrumb: 'Marca' } },
+  { path: 'team', loadChildren: () => import('./components/pages/team/team.module').then(m => m.TeamModule), data: { breadcrumb: 'Equipo' } },
   { path: 'team-details/:id', loadChildren: () => import('./components/pages/team-details/team-details.module').then(m => m.TeamDetailsModule), data: { breadcrumb: 'Team Details' } },
   { path: 'careers', loadChildren: () => import('./components/pages/careers/careers.module').then(m => m.CareersModule), data: { breadcrumb: 'Careers' } },
   { path: 'faqs', loadChildren: () => import('./components/pages/faqs/faqs.module').then(m => m.FaqsModule), data: { breadcrumb: "FAQ's" } },
   // Services
   { path: 'services', loadChildren: () => import('./components/pages/services/services.module').then(m => m.ServicesModule), data: { breadcrumb: 'Services' } },
   { path: 'services-v2', loadChildren: () => import('./components/pages/services-v2/services-v2.module').then(m => m.ServicesV2Module), data: { breadcrumb: 'Services' } },
-  { path: 'service-details/:id', loadChildren: () => import('./components/pages/service-details/service-details.module').then(m => m.ServiceDetailsModule), data: { breadcrumb: 'Service Details' } },
+  { path: 'service-details/:id', loadChildren: () => import('./components/pages/service-details/service-details.module').then(m => m.ServiceDetailsModule), data: { breadcrumb: 'Servicios' } },
   // Blog
   { path: 'blog/cat/:catId', loadChildren: () => import('./components/pages/blog-grid/blog-grid.module').then(m => m.BlogGridModule), data: { breadcrumb: 'Blog Grid' } },
   { path: 'blog/tag/:tagId', loadChildren: () => import('./components/pages/blog-grid/blog-grid.module').then(m => m.BlogGridModule), data: { breadcrumb: 'Blog Grid' } },
@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'blog-details/:id', loadChildren: () => import('./components/pages/blog-details/blog-details.module').then(m => m.BlogDetailsModule), data: { breadcrumb: 'Blog Details' } },
   // Portfolio
   { path: 'portfolio', loadChildren: () => import('./components/pages/portfolio/portfolio.module').then(m => m.PortfolioModule), data: { breadcrumb: 'Portfolio' } },
-  { path: 'portfolio-v2', loadChildren: () => import('./components/pages/portfolio-v2/portfolio-v2.module').then(m => m.PortfolioV2Module), data: { breadcrumb: 'Portfolio' } },
+  { path: 'portfolio-v2', loadChildren: () => import('./components/pages/portfolio-v2/portfolio-v2.module').then(m => m.PortfolioV2Module), data: { breadcrumb: 'Proyectos' } },
   { path: 'portfolio-details/:id', loadChildren: () => import('./components/pages/portfolio-details/portfolio-details.module').then(m => m.PortfolioDetailsModule), data: { breadcrumb: 'Portfolio Details' } },
   // Shop
   { path: 'shop/cat/:catId', loadChildren: () => import('./components/pages/shop/shop.module').then(m => m.ShopModule), data: { breadcrumb: 'Shop' } },
@@ -34,7 +34,7 @@ const routes: Routes = [
   { path: 'shop', loadChildren: () => import('./components/pages/shop/shop.module').then(m => m.ShopModule), data: { breadcrumb: 'Shop' } },
   { path: 'product-details/:id', loadChildren: () => import('./components/pages/product-details/product-details.module').then(m => m.ProductDetailsModule), data: { breadcrumb: 'Shop Details' } },
   // Contact
-  { path: 'contact', loadChildren: () => import('./components/pages/contact/contact.module').then(m => m.ContactModule), data: { breadcrumb: 'Contact Us' } }
+  { path: 'contact', loadChildren: () => import('./components/pages/contact/contact.module').then(m => m.ContactModule), data: { breadcrumb: 'Contacto' } }
 ];
 
 @NgModule({

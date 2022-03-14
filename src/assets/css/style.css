@@ -363,7 +363,7 @@ a, a:hover {
 .section-title .title-tag {
   font-size: 20px;
   font-weight: 700;
-  color: #ff4a17;
+  color: #C4151C;
   display: inline-block;
   position: relative;
   margin-bottom: 15px;
@@ -1583,7 +1583,7 @@ header.header-three .header-nav::before {
   position: absolute;
   left: 0;
   top: 0;
-  background-color: #ff4a17;
+  background-color: #27a9e1;
   -webkit-clip-path: polygon(0 0, 0 100%, 100% 0);
           clip-path: polygon(0 0, 0 100%, 100% 0);
   z-index: -1;
