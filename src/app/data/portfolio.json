@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "gridimg": "assets/img/project/05.jpg",
+        "gridimg": "assets/img/project/01.jpeg",
         "title": "Free Consulting",
         "shortdesc": "Join us for consultations",
         "category":[1,4],
@@ -14,7 +14,7 @@
     },
     {
         "id": 2,
-        "gridimg": "assets/img/project/03.jpg",
+        "gridimg": "assets/img/project/02.jpeg",
         "title": "How To Business",
         "shortdesc": "Join us for consultations",
         "category":[2,3,6],
@@ -27,7 +27,7 @@
     },
     {
         "id": 3,
-        "gridimg": "assets/img/project/14.jpg",
+        "gridimg": "assets/img/project/03.jpeg",
         "title": "Design Strategy",
         "shortdesc": "Join us for consultations",
         "category":[1,2,5],
@@ -40,7 +40,7 @@
     },
     {
         "id": 4,
-        "gridimg": "assets/img/project/02.jpg",
+        "gridimg": "assets/img/project/04.jpeg",
         "title": "Research Strategy",
         "shortdesc": "Join us for consultations",
         "category":[1,2,6],
@@ -53,7 +53,7 @@
     },
     {
         "id": 5,
-        "gridimg": "assets/img/project/10.jpg",
+        "gridimg": "assets/img/project/05.jpeg",
         "title": "IT Consultations",
         "shortdesc": "Join us for consultations",
         "category":[3,5],
@@ -66,7 +66,7 @@
     },
     {
         "id": 6,
-        "gridimg": "assets/img/project/11.jpg",
+        "gridimg": "assets/img/project/06.jpeg",
         "title": "Business Monitor",
         "shortdesc": "Join us for consultations",
         "category":[4,6],
